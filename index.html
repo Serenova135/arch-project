@@ -358,7 +358,7 @@ function drawMoon(){
   const halo=ctx.createRadialGradient(mx,my,moonR*0.8,mx,my,moonR*2.8);
  // halo.addColorStop(0,'rgba(255,245,190,0.18)');
   halo.addColorStop(0.5,'rgba(245,220,130,0.08)');
-  halo.addColorStop(0,'rgba(255,245,190,0.06)');
+  halo.addColorStop(0,'rgba(255,245,190,0.03)');
 
   halo.addColorStop(1,'rgba(245,200,80,0)');
   ctx.beginPath();ctx.arc(mx,my,moonR*2.8,0,PI2);
@@ -367,7 +367,7 @@ function drawMoon(){
   // Inner soft glow
   const innerGlow=ctx.createRadialGradient(mx,my,moonR*0.5,mx,my,moonR*1.45);
  // innerGlow.addColorStop(0,'rgba(255,252,220,0.55)');
-  innerGlow.addColorStop(0,'rgba(255,252,220,0.18)');
+  innerGlow.addColorStop(0,'rgba(255,252,220,0.10)');
   innerGlow.addColorStop(1,'rgba(245,225,140,0)');
   ctx.beginPath();ctx.arc(mx,my,moonR*1.45,0,PI2);
   ctx.fillStyle=innerGlow;ctx.fill();
