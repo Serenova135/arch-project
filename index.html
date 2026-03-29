@@ -163,7 +163,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(
   <div class="s-title">Firefly Catcher</div>
   <div class="s-sub">Aim at a firefly<br>Hold to draw · Release to throw the net</div>
   <button class="s-btn" id="start-btn">✦ Begin the Hunt ✦</button>
-  <p class="s-hint">5 fireflies · 3 carry secret messages · aim carefully!</p>
+  <p class="s-hint">aim carefully!</p>
 </div>
 
 <!-- HUD -->
@@ -222,10 +222,10 @@ const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
 
 // ── MESSAGES ─────────────────────────────────────────
 const REAL_MSGS=[
-  {icon:'💛',title:'Little Light',body:'You are the warmest thing in my world — like a firefly on a dark night. I\'d follow your glow anywhere.',pts:15},
-  {icon:'🌙',title:'Moonlit Secret',body:'Every time I see fireflies, I think of you. Small, bright, impossible to catch — and yet here you are.',pts:15},
-  {icon:'✨',title:'You Found It',body:'Some things are worth chasing through the dark. You\'re one of them. Always have been.',pts:15},
-  {icon:'💚',title:'Garden Magic',body:'The garden keeps your secret: every little light out here whispers your name softly.',pts:10},
+  {icon:'💛',title:'Little Light',body:'Hello! Kumusta kana? Just checking up on you. I hope youre doing well and if may need ka man remember that im always here, okay',pts:15},
+  {icon:'🌙',title:'Moonlit Secret',body:'Hey, just a gentle reminder to give yourself a break when needed. You\'ve been doing your best and thats enough',pts:15},
+  {icon:'✨',title:'You Found It',body:'Im so proud of you and im cheering you on every step of the way. keep going you\'ve got this',pts:15},
+  {icon:'💚',title:'Garden Magic',body:'In the garden\'s hush, even the smallest lights remind us that every spark has its place ',pts:10},
 ];
 const EMPTY_MSGS=[
   {icon:'🌿',title:'Just Glowing',body:'This one carries no message — only light. Sometimes that\'s enough.',pts:5,empty:true},
@@ -356,15 +356,18 @@ function drawMoon(){
 
   // Middle glow halo
   const halo=ctx.createRadialGradient(mx,my,moonR*0.8,mx,my,moonR*2.8);
-  halo.addColorStop(0,'rgba(255,245,190,0.18)');
+ // halo.addColorStop(0,'rgba(255,245,190,0.18)');
   halo.addColorStop(0.5,'rgba(245,220,130,0.08)');
+  halo.addColorStop(0,'rgba(255,245,190,0.06)');
+
   halo.addColorStop(1,'rgba(245,200,80,0)');
   ctx.beginPath();ctx.arc(mx,my,moonR*2.8,0,PI2);
   ctx.fillStyle=halo;ctx.fill();
 
   // Inner soft glow
   const innerGlow=ctx.createRadialGradient(mx,my,moonR*0.5,mx,my,moonR*1.45);
-  innerGlow.addColorStop(0,'rgba(255,252,220,0.55)');
+ // innerGlow.addColorStop(0,'rgba(255,252,220,0.55)');
+  innerGlow.addColorStop(0,'rgba(255,252,220,0.18)');
   innerGlow.addColorStop(1,'rgba(245,225,140,0)');
   ctx.beginPath();ctx.arc(mx,my,moonR*1.45,0,PI2);
   ctx.fillStyle=innerGlow;ctx.fill();
